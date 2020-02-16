@@ -1,4 +1,4 @@
-package com.shai.autodesk
+package com.shai.autodesk.views
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import com.shai.autodesk.R
 import kotlinx.android.synthetic.main.article_frag.*
 
 class ArticleFragment : Fragment() {

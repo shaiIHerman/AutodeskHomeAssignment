@@ -2,6 +2,7 @@ package com.shai.autodesk
 
 import android.os.Bundle
 import android.view.MenuItem
+import com.shai.autodesk.views.ArticleFragment
 
 class MainActivity : BaseActivity(), IActivityCallback {
 
