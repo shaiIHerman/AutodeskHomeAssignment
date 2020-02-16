@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_margin_top">10dp</dimen>
+    <dimen name="card_media_height">190dp</dimen>
+    <dimen name="text_margin_start">10dp</dimen>
+    <dimen name="large_text">22sp</dimen>
+    <dimen name="card_info_margin_top">10dp</dimen>
+    <dimen name="medium_text">16sp</dimen>
+</resources>
