@@ -1,10 +1,13 @@
-package com.shai.autodesk
+package com.shai.autodesk.views.activities
 
 import android.os.Bundle
 import android.view.MenuItem
-import com.shai.autodesk.views.ArticleFragment
+import com.shai.autodesk.R
+import com.shai.autodesk.views.fragments.ArticleFragment
+import com.shai.autodesk.views.fragments.ArticlesListFragment
 
-class MainActivity : BaseActivity(), IActivityCallback {
+class MainActivity : BaseActivity(),
+    IActivityCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +26,10 @@ class MainActivity : BaseActivity(), IActivityCallback {
     }
 
     override fun showArticle(url: String) {
-        replaceFragment(R.id.containerLay, ArticleFragment.newInstance(url), ArticleFragment.TAG)
+        replaceFragment(R.id.containerLay,
+            ArticleFragment.newInstance(url),
+            ArticleFragment.TAG
+        )
             .commit()
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }

@@ -1,21 +1,23 @@
 package com.shai.autodesk
 
 import com.shai.autodesk.db.AppDatabase
-import com.shai.autodesk.db.ArticleModel
-import com.shai.autodesk.db.NewsDao
+import com.shai.autodesk.db.model.ArticleModel
+import com.shai.autodesk.db.dao.NewsDao
+import com.shai.autodesk.db.repo.NewsRepository
+import com.shai.autodesk.net.NewsApi
+import com.shai.autodesk.net.model.ArticleInfo
+import com.shai.autodesk.net.model.NewsResponse
+import com.shai.autodesk.net.model.Source
 import io.reactivex.Completable
-import io.reactivex.Scheduler
 import io.reactivex.Single
 import io.reactivex.android.plugins.RxAndroidPlugins
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
-import org.junit.BeforeClass
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import retrofit2.Retrofit
-import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
 
 
@@ -43,7 +45,8 @@ class NewsRepositoryTest {
     fun setUp() {
         MockitoAnnotations.initMocks(this)
         RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
-        newsRepository = NewsRepository(newsApi, newsDao)
+        newsRepository =
+            NewsRepository(newsApi, newsDao)
     }
 
     @Test

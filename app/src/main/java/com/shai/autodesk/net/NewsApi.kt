@@ -1,5 +1,6 @@
-package com.shai.autodesk
+package com.shai.autodesk.net
 
+import com.shai.autodesk.net.model.NewsResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

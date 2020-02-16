@@ -2,6 +2,8 @@ package com.shai.autodesk.db
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
+import com.shai.autodesk.db.dao.NewsDao
+import com.shai.autodesk.db.model.ArticleModel
 
 
 @Database(

@@ -1,4 +1,4 @@
-package com.shai.autodesk
+package com.shai.autodesk.net.model
 
 import com.google.gson.annotations.SerializedName
 

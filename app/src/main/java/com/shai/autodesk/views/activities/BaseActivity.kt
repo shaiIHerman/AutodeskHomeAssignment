@@ -1,4 +1,4 @@
-package com.shai.autodesk
+package com.shai.autodesk.views.activities
 
 import android.R
 import androidx.annotation.IdRes

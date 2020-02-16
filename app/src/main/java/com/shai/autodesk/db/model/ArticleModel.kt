@@ -1,4 +1,4 @@
-package com.shai.autodesk.db
+package com.shai.autodesk.db.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Embedded

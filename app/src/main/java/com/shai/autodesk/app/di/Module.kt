@@ -6,10 +6,10 @@ import com.google.gson.FieldNamingPolicy
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.shai.autodesk.BuildConfig
-import com.shai.autodesk.NewsApi
-import com.shai.autodesk.NewsRepository
+import com.shai.autodesk.net.NewsApi
+import com.shai.autodesk.db.repo.NewsRepository
 import com.shai.autodesk.db.AppDatabase
-import com.shai.autodesk.db.NewsDao
+import com.shai.autodesk.db.dao.NewsDao
 import com.shai.autodesk.viewmodel.NewsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

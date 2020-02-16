@@ -1,9 +1,10 @@
-package com.shai.autodesk.db
+package com.shai.autodesk.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.shai.autodesk.db.model.ArticleModel
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single

@@ -1,4 +1,4 @@
-package com.shai.autodesk
+package com.shai.autodesk.views.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.shai.autodesk.db.ArticleModel
+import com.shai.autodesk.views.adapters.ArticlesAdapter
+import com.shai.autodesk.views.activities.IActivityCallback
+import com.shai.autodesk.R
+import com.shai.autodesk.db.model.ArticleModel
 import com.shai.autodesk.viewmodel.NewsViewModel
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.articles_list_frag.*
@@ -50,19 +53,24 @@ class ArticlesListFragment : Fragment() {
         val layoutManager = LinearLayoutManager(context)
         layoutManager.orientation = RecyclerView.VERTICAL
         recyclerView.layoutManager = layoutManager
-        adapter = ArticlesAdapter(articles, context!!, object : ArticlesAdapter.ArticleListener {
-            override fun onArticleClick(url: String?) {
-                if (url != null) {
-                    activityCallback.showArticle(url)
+        adapter = ArticlesAdapter(
+            articles,
+            context!!,
+            object :
+                ArticlesAdapter.ArticleListener {
+                override fun onArticleClick(url: String?) {
+                    if (url != null) {
+                        activityCallback.showArticle(url)
+                    }
                 }
-            }
-        })
+            })
         recyclerView.adapter = adapter
     }
 
     companion object {
         val TAG: String = ArticlesListFragment::class.java.simpleName
 
-        fun newInstance() = ArticlesListFragment()
+        fun newInstance() =
+            ArticlesListFragment()
     }
 }

@@ -1,6 +1,5 @@
-package com.shai.autodesk
+package com.shai.autodesk.views.adapters
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +8,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.shai.autodesk.db.ArticleModel
+import com.shai.autodesk.R
+import com.shai.autodesk.db.model.ArticleModel
 import com.shai.autodesk.utils.DateUtils.Companion.convertToNewFormat
-import java.text.ParseException
-import java.text.SimpleDateFormat
-import java.util.*
 
 class ArticlesAdapter(
     private var data: List<ArticleModel>,

@@ -1,8 +1,10 @@
-package com.shai.autodesk
+package com.shai.autodesk.db.repo
 
 import android.annotation.SuppressLint
-import com.shai.autodesk.db.ArticleModel
-import com.shai.autodesk.db.NewsDao
+import com.shai.autodesk.db.model.ArticleModel
+import com.shai.autodesk.db.dao.NewsDao
+import com.shai.autodesk.net.NewsApi
+import com.shai.autodesk.net.model.NewsResponse
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber
 
@@ -12,7 +14,10 @@ class NewsRepository(private val newsApi: NewsApi, private val newsDao: NewsDao)
 
     @SuppressLint("CheckResult")
     fun refresh() {
-        newsApi.getSourceHeadlines(DEFAULT_SOURCE_ID, API_KEY)
+        newsApi.getSourceHeadlines(
+            DEFAULT_SOURCE_ID,
+            API_KEY
+        )
             .subscribeOn(Schedulers.io())
             .filter { it.totalResults > 0 }
             .map { castToArticleModel(it) }

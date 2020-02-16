@@ -1,4 +1,4 @@
-package com.shai.autodesk.views
+package com.shai.autodesk.views.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
