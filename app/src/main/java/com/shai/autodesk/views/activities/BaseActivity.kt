@@ -9,20 +9,13 @@ import androidx.fragment.app.FragmentTransaction
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    fun replaceFragment(@IdRes container: Int, fragment: Fragment?,
-                                tag: String): FragmentTransaction {
+    fun replaceFragment(
+        @IdRes container: Int, fragment: Fragment?,
+        tag: String
+    ): FragmentTransaction {
         return supportFragmentManager
             .beginTransaction()
             .replace(container, fragment!!, tag)
-            .addToBackStack(tag)
-            .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
-    }
-
-    fun addFragment(@IdRes container: Int, fragment: Fragment?,
-                            tag: String): FragmentTransaction {
-        return supportFragmentManager
-            .beginTransaction()
-            .add(container, fragment!!, tag)
             .addToBackStack(tag)
             .setCustomAnimations(R.anim.fade_in, R.anim.fade_out)
     }

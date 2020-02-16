@@ -8,15 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.shai.autodesk.views.adapters.ArticlesAdapter
-import com.shai.autodesk.views.activities.IActivityCallback
 import com.shai.autodesk.R
 import com.shai.autodesk.db.model.ArticleModel
 import com.shai.autodesk.viewmodel.NewsViewModel
+import com.shai.autodesk.views.activities.IActivityCallback
+import com.shai.autodesk.views.adapters.ArticlesAdapter
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.articles_list_frag.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import timber.log.Timber
+
 
 class ArticlesListFragment : Fragment() {
     private val newsViewModel by viewModel<NewsViewModel>()
@@ -37,7 +38,11 @@ class ArticlesListFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        compositeDisposable.add(newsViewModel.data.subscribe({ initArticlesList(it) }, { Timber.e(it) }))
+        compositeDisposable.add(
+            newsViewModel.data.subscribe(
+                { initArticlesList(it) },
+                { Timber.e(it) })
+        )
         newsViewModel.refreshData()
     }
 
